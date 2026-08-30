@@ -393,6 +393,107 @@
     object-fit:cover;
   }
 
+  /* ---------- PIVOT ANNOUNCEMENT BLOCK ---------- */
+  .pivot-block{
+    position:relative;
+    margin:22px -4px 6px;
+    padding:22px 20px 24px;
+    border-radius:20px;
+    background:linear-gradient(155deg, #ff3fa4 0%, #b53a2e 45%, #e5a83a 100%);
+    box-shadow:0 12px 28px rgba(181,58,46,0.35), 0 0 0 3px rgba(255,255,255,0.15) inset;
+    text-align:center;
+    animation:pivot-glow 2.4s ease-in-out infinite alternate;
+  }
+  @keyframes pivot-glow{
+    from{ box-shadow:0 12px 28px rgba(181,58,46,0.35), 0 0 0 3px rgba(255,255,255,0.15) inset; }
+    to{ box-shadow:0 12px 36px rgba(255,63,164,0.55), 0 0 0 3px rgba(255,255,255,0.3) inset; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .pivot-block{ animation:none; }
+  }
+  .pivot-badge{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--gold);
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:0.8rem;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .pivot-message{
+    color:#fff;
+    font-size:1rem;
+    line-height:1.55;
+    font-weight:500;
+    margin:0 0 16px;
+    text-shadow:0 1px 3px rgba(0,0,0,0.2);
+  }
+  .pivot-image{
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 6px 16px rgba(0,0,0,0.3);
+    margin-bottom:18px;
+  }
+  .pivot-image img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-height:240px;
+    object-fit:cover;
+  }
+  .pivot-vote-label{
+    color:#fff;
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    letter-spacing:0.5px;
+    margin:0 0 10px;
+  }
+  .pivot-votes{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:20px;
+  }
+  .vote-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.15);
+    border:2px solid rgba(255,255,255,0.6);
+    color:#fff;
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    padding:10px 18px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:background 0.15s ease, transform 0.1s ease;
+  }
+  .vote-btn:hover{ background:rgba(255,255,255,0.28); }
+  .vote-btn:active{ transform:scale(0.96); }
+  .vote-btn.voted{
+    background:#fff;
+    color:var(--red-dark);
+    border-color:#fff;
+  }
+  .pivot-cta{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--gold);
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    letter-spacing:0.5px;
+    padding:14px 26px;
+    border-radius:14px;
+    text-decoration:none;
+    box-shadow:0 4px 0 rgba(0,0,0,0.25);
+  }
+  .pivot-cta:active{ box-shadow:0 2px 0 rgba(0,0,0,0.25); transform:translateY(2px); }
+
   /* ---------- FOOTER ---------- */
   footer{
     position:relative;
@@ -442,8 +543,6 @@
   <div class="hero-slot">
   <section class="day">
     <span class="day-badge">Fri, Sep 4</span>
-    <h2 class="day-title">Arrival Day</h2>
-    <p class="day-date">Getting everyone into town</p>
 
     <div class="activity">
       <span class="a-time">11:00 PM</span>
@@ -455,12 +554,10 @@
   <!-- DAY 2 -->
   <section class="day">
     <span class="day-badge">Sat, Sep 5</span>
-    <h2 class="day-title">Houston Day</h2>
-    <p class="day-date">BBQ, darts, and a proper night out</p>
 
     <div class="activity">
       <span class="a-time">8:00 AM</span>
-      <p class="a-title">Light breakfast <span class="a-optional">TBD</span></p>
+      <p class="a-title">Light breakfast at home</p>
     </div>
     <div class="activity">
       <span class="a-time">11:00 AM</span>
@@ -470,28 +567,22 @@
       </div>
     </div>
     <div class="activity">
-      <span class="a-time">4:00 PM</span>
+      <span class="a-time">1:30 – 5:00 PM</span>
+      <p class="a-title">Hang out back at house</p>
+    </div>
+    <div class="activity">
+      <span class="a-time">6:00 PM</span>
       <p class="a-title">Darts at <a href="https://www.flightclubdartsusa.com/houston" target="_blank" rel="noopener">Flight Club</a></p>
-      <p class="a-desc">$17 per person — food and drinks additional.</p>
       <div class="a-image">
         <img src="https://www.flightclubdartsusa.com/img/asset/YXNzZXRzL2hvdXN0b24vaG91c3Rvbi1vY2hlcy0xLmpwZw/houston-oches-1.jpg?h=960&q=70&fm=webp&s=f48a1894fb8401d96a86a2fe50d93745" alt="Dart lanes at Flight Club Houston" loading="lazy">
       </div>
     </div>
     <div class="activity">
-      <span class="a-time">6:00 PM</span>
-      <p class="a-title"><a href="https://truckyard.com/houston/" target="_blank" rel="noopener">Truck Yard</a> or <a href="https://kirbyicehouse.com/" target="_blank" rel="noopener">Kirby Ice House</a></p>
-      <div class="a-image">
-        <img src="https://365thingsinhouston.com/wp-content/uploads/2024/05/houston-nightlife-the-best-bars-in-eado-truck-yard.jpg" alt="Outdoor patio seating at Kirby Ice House" loading="lazy">
-      </div>
-    </div>
-    <div class="activity">
       <span class="a-time">8:00 PM</span>
-      <p class="a-title">Karaoke at <a href="https://www.spotlightkaraoke.com/nightingale-midtown-reservations" target="_blank" rel="noopener">Nightingale</a> <span class="a-optional">Optional</span></p>
-    </div>
-    <div class="activity">
-      <span class="a-time">9:00 PM</span>
-      <p class="a-title"><a href="https://neonbootsclub.com/" target="_blank" rel="noopener">Neon Boots Dancehall &amp; Saloon</a> <span class="a-optional">Optional</span></p>
-
+      <p class="a-title">Barhopping around EaDo: <a href="https://truckyard.com/houston/" target="_blank" rel="noopener">Truck Yard</a>, <a href="https://www.chapmanandkirby.com/" target="_blank" rel="noopener">Chapman &amp; Kirby</a>, <a href="https://pitch25.com/" target="_blank" rel="noopener">Pitch 25</a></p>
+      <div class="a-image">
+        <img src="https://365thingsinhouston.com/wp-content/uploads/2024/05/houston-nightlife-the-best-bars-in-eado-truck-yard.jpg" alt="Truck Yard patio in EaDo, Houston" loading="lazy">
+      </div>
     </div>
     <div class="activity">
       <span class="a-time">12:00 AM</span>
@@ -502,59 +593,56 @@
   <!-- DAY 3 -->
   <section class="day">
     <span class="day-badge">Sun, Sep 6</span>
-    <h2 class="day-title">Bay Day</h2>
-    <p class="day-date">Lake house, pool, and the boardwalk</p>
 
     <div class="activity">
-      <span class="a-time">10:00 AM</span>
-      <p class="a-title">Pilates at <a href="https://www.clubstudiofitness.com/pages/clubhome.aspx?clubid=1385&Kingwood-Texas+GYM" target="_blank" rel="noopener">Club Studio</a> <span class="a-optional">For some</span></p>
+      <span class="a-time">9:00 AM</span>
+      <p class="a-title">Breakfast at home</p>
     </div>
     <div class="activity">
-      <span class="a-time">12:00 PM</span>
+      <span class="a-time">11:30 AM</span>
+      <p class="a-title">Pilates</p>
+      <p class="a-desc">Zelle donations to Jai or Katelynn.</p>
+    </div>
+    <div class="activity">
+      <span class="a-time">1:00 PM</span>
       <p class="a-title">Lunch at <a href="https://tex-mex.com/" target="_blank" rel="noopener">Lupe Tortilla</a></p>
       <div class="a-image">
         <img src="https://originallupetortilla.com/wp-content/uploads/2023/10/FWM_1371.jpg" alt="Sizzling fajitas at Lupe Tortilla" loading="lazy">
       </div>
     </div>
     <div class="activity">
-      <span class="a-time">4:00 PM</span>
-      <p class="a-title"><a href="https://www.airbnb.com/rooms/1483403442223652897" target="_blank" rel="noopener">Airbnb check-in</a></p>
-      <p class="a-desc">$127.50 per person.</p>
+      <span class="a-time">3:00 PM</span>
+      <p class="a-title"><a href="https://www.airbnb.com/rooms/1678488681503807886" target="_blank" rel="noopener">Airbnb check-in</a></p>
+      <p class="a-desc">$143.46 per person. Zelle Jai or Katelynn.</p>
     </div>
     <div class="activity">
-      <span class="a-time">4:30 PM</span>
-      <p class="a-title">Pool / hang at the Airbnb</p>
-    </div>
-    <div class="activity">
-      <span class="a-time">7:00 PM</span>
-      <p class="a-title"><a href="https://www.kemahboardwalk.com/" target="_blank" rel="noopener">Kemah Boardwalk</a></p>
+      <span class="a-time">6:00 PM</span>
+      <p class="a-title">Dinner and drinks at <a href="https://www.posthtx.com/" target="_blank" rel="noopener">The Post</a></p>
       <div class="a-image">
-        <img src="https://images.fineartamerica.com/images/artworkimages/medium/3/1-kemah-boardwalk-tim-stanley.jpg" alt="Kemah Boardwalk" loading="lazy">
+        <img src="https://cdn.prod.website-files.com/66abe0a90447f50739207a12/6938926fe81a00800ed365d8_POST_Skylawn_Soccer_1_web2000w.jpg" alt="Skylawn rooftop park at POST Houston" loading="lazy">
       </div>
-    </div>
-    <div class="activity">
-      <span class="a-time">9:00 PM</span>
-      <p class="a-title">Back at the Airbnb, games</p>
     </div>
   </section>
 
   <!-- DAY 4 -->
   <section class="day">
     <span class="day-badge">Mon, Sep 7</span>
-    <h2 class="day-title">Not Goodbye, Just See Y'all Later</h2>
-    <p class="day-date">One more morning before flights</p>
 
     <div class="activity">
-      <span class="a-time">9:00 AM</span>
-      <p class="a-title">Morning pool, breakfast at the Airbnb</p>
+      <span class="a-time">7:00 AM</span>
+      <p class="a-title">Breakfast at Airbnb, pool</p>
     </div>
     <div class="activity">
       <span class="a-time">11:00 AM</span>
       <p class="a-title">Airbnb checkout</p>
     </div>
     <div class="activity">
-      <span class="a-time">1:00 PM</span>
-      <p class="a-title">Find something nearby <span class="a-optional">TBD</span></p>
+      <span class="a-time">11:30 AM</span>
+      <p class="a-title">Find something to do nearby <span class="a-optional">TBD</span></p>
+    </div>
+    <div class="activity">
+      <span class="a-time">1:30 PM</span>
+      <p class="a-title">Head to IAH</p>
     </div>
   </section>
 </main>
@@ -733,6 +821,44 @@
   window.addEventListener('load', updateSky);
 
   updateSky();
+
+  // Pivot vote tracker. NOTE: this is stored in this browser's localStorage
+  // only — there's no backend/database wired up, so counts are NOT shared
+  // across everyone viewing the page. Each visitor just sees their own
+  // single vote reflected. Wiring this up as a real, shared group vote
+  // would need a small backend (e.g. Supabase).
+  (function () {
+    const upCountEl = document.getElementById('pivotUpCount');
+    const downCountEl = document.getElementById('pivotDownCount');
+    const upBtn = document.getElementById('voteUpBtn');
+    const downBtn = document.getElementById('voteDownBtn');
+    if (!upCountEl || !downCountEl || !upBtn || !downBtn) return;
+
+    function getCount(key) {
+      return parseInt(localStorage.getItem(key) || '0', 10);
+    }
+    function render() {
+      upCountEl.textContent = getCount('pivotVoteUpCount');
+      downCountEl.textContent = getCount('pivotVoteDownCount');
+      const current = localStorage.getItem('pivotVoteChoice');
+      upBtn.classList.toggle('voted', current === 'up');
+      downBtn.classList.toggle('voted', current === 'down');
+    }
+    window.castPivotVote = function (choice) {
+      const current = localStorage.getItem('pivotVoteChoice');
+      if (current === choice) return; // already voted this way
+      if (current === 'up') {
+        localStorage.setItem('pivotVoteUpCount', String(getCount('pivotVoteUpCount') - 1));
+      } else if (current === 'down') {
+        localStorage.setItem('pivotVoteDownCount', String(getCount('pivotVoteDownCount') - 1));
+      }
+      const key = choice === 'up' ? 'pivotVoteUpCount' : 'pivotVoteDownCount';
+      localStorage.setItem(key, String(getCount(key) + 1));
+      localStorage.setItem('pivotVoteChoice', choice);
+      render();
+    };
+    render();
+  })();
 </script>
 
 </body>
